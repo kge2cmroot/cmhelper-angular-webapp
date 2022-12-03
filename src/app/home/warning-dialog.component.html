@@ -1,0 +1,23 @@
+<h1 mat-dialog-title>Warning</h1>
+<div mat-dialog-content>
+  <p>The statement <b>{{data.head}} {{data.relation}} {{data.tail}}</b> is not correct. </p>
+  <p>Before to continue the exercise, take a look to following pages: </p>
+  <mat-list role="list">
+
+    <mat-list-item role="listitem">
+      <mat-icon mat-list-icon>link</mat-icon>
+      <a target="_blank" [href]="data.wikiPageHead">{{data.head}}</a>
+    </mat-list-item>
+
+    
+    <mat-list-item role="listitem">
+      <mat-icon mat-list-icon>link</mat-icon>
+      <a target="_blank" [href]="data.wikiPageTail">{{data.tail}}</a>
+    </mat-list-item>
+
+  </mat-list>
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+</div>

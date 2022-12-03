@@ -1,0 +1,17 @@
+<h1>{{exercise.title}}</h1>
+<h2>{{exercise.argument}}</h2>
+<app-cm-helper-form
+[links] = "links"
+[nodes] = "nodes"
+(doEvaluateClicked) = "doEvaluate($event)"
+(inputChanges) = "inputChanges($event)"
+></app-cm-helper-form>
+<app-cm-helper-view *ngIf="showMessage"></app-cm-helper-view>
+<mat-divider></mat-divider>
+<app-cm-helper-graph
+[nodes] = "nodes"
+[edges] = "edges"
+*ngIf = "!loading"
+></app-cm-helper-graph>
+<mat-spinner *ngIf="loading"></mat-spinner>
+

@@ -1,0 +1,38 @@
+<section>
+
+
+  <div class="example-container" [formGroup]="inputForm">
+  
+
+
+    <mat-form-field>
+      <mat-label>Select first Concept</mat-label>
+      <mat-select formControlName = "firstConcept">
+        <mat-option *ngFor="let node of nodes" [value]="node.label">{{node.id}}</mat-option>
+      </mat-select>
+      <!-- <mat-hint align="end">Choose the link between the given two entities.</mat-hint> -->
+    </mat-form-field>
+    
+    <mat-form-field>
+      <mat-label>Select the link</mat-label>
+      <mat-select formControlName = "relation">
+        <mat-option *ngFor="let link of links.links" [value]="link.value">{{link.value}}</mat-option>
+      </mat-select>
+      <!-- <mat-hint align="end">Choose the link between the given two entities.</mat-hint> -->
+    </mat-form-field>
+    
+    <mat-form-field>
+      <mat-label>Select second Concept</mat-label>
+      <mat-select formControlName = "secondConcept">
+        <mat-option *ngFor="let node of nodes" [value]="node.label">{{node.id}}</mat-option>
+      </mat-select>
+      <!-- <mat-hint align="end">Choose the link between the given two entities.</mat-hint> -->
+    </mat-form-field>
+    
+    <button mat-raised-button color="primary" [disabled]="disableEvaluate()" (click)="doEvaluate()">Evaluate</button>
+
+    <!-- <button mat-raised-button  [disabled]="!disableEvaluate()">Reset</button> -->
+  
+
+  </div>
+</section>
